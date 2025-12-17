@@ -1,0 +1,325 @@
+/* =========================================
+   1. VARIABLES & RESET (THÈME LUXE DARK)
+   ========================================= */
+:root {
+    /* Palette de couleurs */
+    --primary-color: #C5A059;  /* Or / Bronze */
+    --primary-dark: #b08d4b;
+    --bg-color: #121212;       /* Fond principal (Noir profond) */
+    --card-bg: #1E1E1E;        /* Fond des cartes (Gris anthracite) */
+    
+    /* Textes */
+    --text-color: #F0F0F0;     /* Blanc cassé (plus doux pour les yeux) */
+    --text-muted: #AAAAAA;     /* Gris clair pour les descriptions */
+    
+    /* Elements */
+    --border-color: #333333;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --radius: 4px;             /* Coins légèrement arrondis */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; /* Police moderne pour le texte */
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+img { max-width: 100%; display: block; }
+
+/* =========================================
+   2. LAYOUT & STRUCTURE
+   ========================================= */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif; /* Police Luxe pour les titres */
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 20px auto 0;
+}
+
+/* =========================================
+   3. HEADER & NAVIGATION
+   ========================================= */
+header {
+    background-color: rgba(18, 18, 18, 0.95); /* Noir semi-transparent */
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Nouveau style pour le logo avec image */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espace entre le logo et le texte */
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 50px; /* On limite la hauteur pour pas qu'il soit énorme */
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color); /* Couleur Or */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+
+nav a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+nav a:hover, nav a.active { color: var(--primary-color); }
+
+/* --- Effet Onglet Actif (Soulignement Or) --- */
+
+nav a.active {
+    color: var(--primary-color) !important; /* Force la couleur Or */
+    font-weight: 600;
+    
+    /* Création de la ligne en dessous */
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px; /* Espace entre le texte et la ligne */
+}
+
+/* Optionnel : Petit effet de transition quand on passe la souris */
+nav a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive Header */
+@media (max-width: 900px) {
+    .header-container { flex-direction: column; height: auto; padding: 20px; }
+    nav ul { flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+}
+
+/* =========================================
+   4. BOUTONS
+   ========================================= */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #000; /* Texte noir sur fond Or */
+    padding: 14px 30px;
+    border-radius: var(--radius);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+}
+
+/* =========================================
+   5. GRILLE & CARTES (Achat, Location, etc.)
+   ========================================= */
+.grid {
+    display: grid;
+    /* Par défaut (Mobile) : 1 colonne */
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+/* Tablette : 2 colonnes */
+@media (min-width: 768px) {
+    .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* PC : 3 colonnes */
+@media (min-width: 1100px) {
+    .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+}
+
+.card img { width: 100%; height: 250px; object-fit: cover; }
+.card-content { padding: 30px; }
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.card-price {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   6. FORMULAIRES (Dark Mode)
+   ========================================= */
+.form-group { margin-bottom: 25px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05); /* Fond sombre */
+    border: 1px solid #333;
+    border-radius: var(--radius);
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Correction pour les options du select (texte blanc sur fond noir) */
+.form-group select option {
+    background-color: #1E1E1E;
+    color: #FFF;
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+    background-color: #000;
+    color: var(--text-muted);
+    padding: 80px 0 30px;
+    margin-top: auto;
+    border-top: 1px solid #222;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-col h4 {
+    color: var(--text-color);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 12px; }
+.copyright { text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #222; }

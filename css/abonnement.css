@@ -1,0 +1,102 @@
+/* =========================================
+   PAGE ABONNEMENT (PRICING)
+   ========================================= */
+
+/* Grille spécifique pour les prix */
+.pricing-grid {
+    display: grid;
+    /* Mobile : 1 colonne */
+    grid-template-columns: 1fr; 
+    gap: 30px;
+    margin-top: 50px;
+    align-items: center; /* Centre verticalement */
+}
+
+/* Tablette : 2 colonnes */
+@media (min-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* PC : 3 colonnes strictement alignées */
+@media (min-width: 1100px) {
+    .pricing-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Carte de Prix */
+.price-card {
+    background: var(--card-bg); /* Gris foncé */
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--primary-color); /* Barre dorée */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Typographie de la carte */
+.price-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.price {
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* Liste des fonctionnalités */
+.features-list {
+    list-style: none;
+    text-align: left;
+    margin: 30px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.features-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* MISE EN AVANT DE LA CARTE DU MILIEU (Business Class) */
+/* On cible le 2ème enfant de la grille sur grand écran */
+@media (min-width: 1100px) {
+    .price-card:nth-child(2) {
+        transform: scale(1.1); /* 10% plus grand */
+        z-index: 10;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 40px rgba(0,0,0,0.6);
+        background: #252525; /* Légèrement plus clair pour ressortir */
+    }
+
+    /* On s'assure que le hover ne casse pas l'effet d'agrandissement */
+    .price-card:nth-child(2):hover {
+        transform: scale(1.15);
+    }
+}

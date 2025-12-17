@@ -1,0 +1,184 @@
+/* --- HERO SECTION SPÉCIFIQUE À LA VENTE --- */
+header {
+    /* CHANGEMENT ICI : 'fixed' permet au menu de suivre le scroll */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* STYLE : Fond semi-transparent + Flou */
+    /* Cela permet de voir l'image en dessous au début, */
+    /* mais garde le menu lisible quand vous descendez sur le contenu noir */
+    background-color: rgba(0, 0, 0, 0.5) !important; 
+    backdrop-filter: blur(10px); /* Effet "verre dépoli" (Glassmorphism) très luxe */
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; /* Bordure très discrète */
+    z-index: 1000; /* Toujours au-dessus de tout le reste */
+}
+
+/* 2. La section Hero qui prend tout l'écran */
+.page-hero {
+    /* Hauteur : 100% de la fenêtre visible */
+    height: 100vh;
+    width: 100%;
+    
+    /* L'image de fond (vraie photo sombre) */
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,   /* Haut un peu sombre pour le menu */
+        rgba(0, 0, 0, 0.6) 50%, 
+        rgba(18, 18, 18, 1) 100% /* Fondu vers le noir en bas pour la transition */
+    ), url('https://images.unsplash.com/photo-1503376763036-066120622c74?q=80&w=1920&auto=format&fit=crop'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Optionnel : Effet parralaxe (l'image reste fixe quand on scroll) */
+    
+    /* Centrage du texte parfait au milieu de l'écran */
+    display: flex;
+    align-items: center;     /* Vertical */
+    justify-content: center; /* Horizontal */
+    
+    /* Reset des marges */
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Ajustement du contenu textuel */
+.page-hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+    z-index: 2; /* Au-dessus du fond */
+    margin-top: 60px; /* Petit décalage pour compenser visuellement le menu */
+}
+
+.page-hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; /* Plus grand pour l'impact */
+    margin-bottom: 25px;
+    line-height: 1.1;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Ombre pour lisibilité */
+}
+
+.page-hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .page-hero-content h1 { font-size: 2.8rem; }
+    .page-hero { background-attachment: scroll; } /* Désactive le parralaxe sur mobile pour perf */
+}
+/* --- SECTION AVANTAGES (BENEFITS) --- */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.benefit-card {
+    text-align: center;
+    padding: 30px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+}
+
+.icon-gold {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.benefit-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.benefit-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* --- SECTION PROCESSUS (STEPS) --- */
+.process-section {
+    background-color: #0a0a0a; /* Fond légèrement plus sombre */
+    padding: 60px 0;
+    margin: 60px 0;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    text-align: center;
+}
+
+.step {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.step-number {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: rgba(197, 160, 89, 0.2); /* Or très transparent */
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.step h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.step p {
+    color: var(--text-muted);
+}
+
+/* --- FORMULAIRE AMÉLIORÉ --- */
+.form-box {
+    background: var(--card-bg);
+    padding: 60px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 900px; /* Plus large */
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+}
+
+/* Grille pour le formulaire (2 colonnes) */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.section-divider {
+    height: 1px;
+    background: #333;
+    margin: 40px 0;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .page-hero-content h1 { font-size: 2.5rem; }
+    .form-box { padding: 30px 20px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; } /* Retour à 1 colonne sur mobile */
+    .steps-container { flex-direction: column; }
+}

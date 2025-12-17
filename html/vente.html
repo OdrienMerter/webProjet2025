@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendre votre véhicule - Eternal Motor</title>
+    
+    <!-- Polices -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/vente.css">
+    <link rel="icon" href="../image/logo.png" type="image/png">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="../index.html" class="logo-container">
+            <img src="../image/logo.png" alt="Logo Eternal Motor" class="logo-img">
+            <span class="logo-text">Eternal Motor</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="achat.html">Achat</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="vente.html" class="active">Vente</a></li>
+                <li><a href="abonnement.html">Abonnement</a></li>
+                <li><a href="A propos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- 1. HERO BANNER SPÉCIFIQUE -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <h1>Confiez-nous votre Exception</h1>
+            <p>Rachat immédiat ou dépôt-vente : valorisez votre véhicule au meilleur prix du marché grâce à notre expertise internationale.</p>
+            <a href="#estimation-form" class="btn">Estimer mon véhicule</a>
+        </div>
+    </section>
+
+    <!-- 2. POURQUOI NOUS CHOISIR (AVANTAGES) -->
+    <section class="container">
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="icon-gold">💎</div>
+                <h3>Expertise Luxe</h3>
+                <p>Nos experts connaissent la valeur réelle des options et de l'historique de votre véhicule de prestige.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon-gold">⚡</div>
+                <h3>Rapidité & Simplicité</h3>
+                <p>Recevez une offre ferme sous 24h. Nous gérons toutes les démarches administratives pour vous.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="icon-gold">🛡️</div>
+                <h3>Paiement Sécurisé</h3>
+                <p>Virement bancaire immédiat ou chèque de banque certifié avant l'enlèvement du véhicule.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. PROCESSUS (LES ÉTAPES) -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Comment ça marche ?</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <span class="step-number">01</span>
+                    <h4>Formulaire en ligne</h4>
+                    <p>Remplissez les détails de votre véhicule en 2 minutes.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">02</span>
+                    <h4>Expertise & Offre</h4>
+                    <p>Nous analysons le marché et vous proposons un prix juste.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">03</span>
+                    <h4>Paiement & Enlèvement</h4>
+                    <p>Nous récupérons le véhicule à votre domicile après paiement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. LE FORMULAIRE (EXISTANT MAIS AMÉLIORÉ) -->
+    <section class="container" id="estimation-form">
+        <h2 class="section-title">Demande d'Estimation Gratuite</h2>
+        <p style="text-align: center; margin-bottom: 40px; color: var(--text-muted);">
+            Remplissez ce formulaire sans engagement. Nos spécialistes vous recontacteront sous 24h.
+        </p>
+
+        <div class="form-box">
+            <form action="#" method="POST">
+                <!-- Ligne : Marque / Modèle -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="marque">Marque</label>
+                        <input type="text" id="marque" name="marque" placeholder="Ex: Porsche" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modele">Modèle</label>
+                        <input type="text" id="modele" name="modele" placeholder="Ex: 911 GT3" required>
+                    </div>
+                </div>
+
+                <!-- Ligne : Année / KM -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="annee">Année</label>
+                        <input type="number" id="annee" name="annee" placeholder="2021" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="km">Kilométrage</label>
+                        <input type="number" id="km" name="km" placeholder="Ex: 12 500" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="etat">État & Historique</label>
+                    <select id="etat" name="etat">
+                        <option value="excellent">Excellent - Carnet complet</option>
+                        <option value="bon">Très bon état</option>
+                        <option value="moyen">État moyen / Frais à prévoir</option>
+                        <option value="collection">Véhicule de collection / Restauration</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Informations complémentaires (Options, couleur...)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Dites-nous en plus sur votre véhicule..."></textarea>
+                </div>
+
+                <div class="section-divider"></div>
+
+                <h3 style="color: var(--primary-color); font-family: 'Playfair Display', serif; margin-bottom: 20px;">Vos Coordonnées</h3>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom complet</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="nom@exemple.com" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tel">Téléphone</label>
+                    <input type="tel" id="tel" name="tel" placeholder="06 00 00 00 00" required>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Obtenir mon estimation</button>
+            </form>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Eternal Motor</h4>
+            <p>Votre partenaire mobilité de prestige.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="achat.html">Acheter</a></li>
+                <li><a href="vente.html">Vendre</a></li>
+                <li><a href="contact.html">Nous contacter</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Agence</h4>
+            <p>41 Boulevard Vauban<br>59000 Lille, France</p>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2025 Eternal Motor. Tous droits réservés.
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+
+/* --- Hero Section Luxe --- */
+.hero {
+position: relative;
+width: 100%;
+min-height: 100vh;
+display: flex;
+align-items: center;
+/* CHANGEMENT ICI : On aligne le contenu au début (gauche) */
+justify-content: flex-start; 
+overflow: hidden;
+background: transparent !important; 
+}
+
+.hero video {
+position: absolute;
+top: 0; left: 0;
+width: 100%; height: 100%;
+object-fit: cover;
+z-index: 0; 
+}
+
+.hero::before {
+content: '';
+position: absolute;
+top: 0; left: 0; right: 0; bottom: 0;
+/* Fond un peu plus sombre pour le dark mode */
+background: rgba(0, 0, 0, 0.6); 
+background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 100%); /* Dégradé pour lisibilité à gauche */
+z-index: 1; 
+}
+
+.hero-content {
+position: relative;
+z-index: 2;
+padding: 20px;
+max-width: 800px;
+/* CHANGEMENT ICI : On décale le texte du bord gauche */
+margin-left: 8%; 
+/* CHANGEMENT ICI : Texte aligné à gauche */
+text-align: left; 
+}
+
+.hero h1 {
+/* Police Serif pour le titre principal */
+font-family: 'Playfair Display', serif; 
+font-size: 4.5rem;
+font-weight: 500; /* Plus fin = Plus élégant */
+margin-bottom: 25px;
+line-height: 1.1;
+color: white;
+}
+
+.hero p {
+font-family: 'Montserrat', sans-serif;
+font-size: 1.2rem;
+margin-bottom: 50px;
+color: #e0e0e0;
+font-weight: 300;
+max-width: 600px; /* Limite la largeur du paragraphe pour qu'il soit compact */
+}
+
+/* --- Styles pour la section Services --- */
+
+.service-card {
+    background-color: transparent; /* Fond transparent pour se fondre */
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    background-color: var(--card-bg); /* S'allume légèrement au survol */
+    border-color: var(--primary-color);
+}
+
+.icon-box {
+    font-size: 3rem; /* Taille de l'émoji/icône */
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 50%;
+    background: rgba(197, 160, 89, 0.1); /* Cercle doré très léger */
+    border: 1px solid var(--primary-color);
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Ajustement des boutons dans le hero */
+.cta-group {
+    display: flex;
+    gap: 20px; /* Espace entre les boutons */
+    justify-content: flex-start; /* Boutons alignés à gauche */
+}
+
+.cta-group .btn {
+    margin: 0; /* On enlève les marges automatiques */
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+.hero { justify-content: center; } /* Sur mobile, on remet au centre */
+.hero-content { 
+    margin-left: 0; 
+    text-align: center; 
+    padding: 20px;
+}
+.hero h1 { font-size: 2.8rem; }
+.cta-group { justify-content: center; }
+}
+
+/* --- Slider dans les Cartes --- */
+
+.card-slider {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    
+    /* Active le défilement horizontal */
+    display: flex;
+    overflow-x: auto;
+    
+    /* Active le "magnétisme" du scroll */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    
+    /* Masque la barre de défilement (optionnel, pour le style) */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Masquer la scrollbar sur Chrome/Safari */
+.card-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.card-slider img {
+    /* Chaque image prend 100% de la largeur du conteneur */
+    min-width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    
+    /* Point d'accroche : l'image s'aligne à gauche */
+    scroll-snap-align: start;
+}
+
+/* Petit indicateur visuel en bas de l'image */
+.slider-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--primary-color);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    pointer-events: none; /* Permet de cliquer à travers */
+    opacity: 0.8;
+    position: sticky; /* Ruse pour qu'il reste visible pendant le scroll */
+    left: 80%; /* Position approximative */
+}   
+
+.swipe-hint {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    
+    /* Cercle de fond discret */
+    width: 35px;
+    height: 35px;
+    background: rgba(0, 0, 0, 0.6); /* Noir transparent */
+    border: 1px solid var(--primary-color); /* Bordure Or */
+    border-radius: 50%;
+    
+    /* Centrage de la flèche */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Pour que le clic passe à travers (permet de swiper même sur la flèche) */
+    pointer-events: none; 
+    
+    /* Animation */
+    animation: pulseArrow 2s infinite;
+    z-index: 10;
+}
+
+/* La flèche elle-même */
+.swipe-hint span {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-left: 2px; /* Petit ajustement optique */
+}
+
+/* L'animation douce */
+@keyframes pulseArrow {
+    0% {
+        opacity: 0.5;
+        transform: translateY(-50%) translateX(0);
+        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-50%) translateX(5px); /* Bouge vers la droite */
+        box-shadow: 0 0 10px 0 rgba(197, 160, 89, 0.2); /* Lueur */
+    }
+    100% {
+        opacity: 0.5;
+        transform: translateY(-50%) translateX(0);
+        box-shadow: 0 0 0 0 rgba(197, 160, 89, 0);
+    }
+}

@@ -1,0 +1,73 @@
+/* --- Styles Spécifiques à la page Contact --- */
+
+/* On utilise la grille définie globalement, mais on l'ajuste ici */
+.grid-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+@media (min-width: 900px) {
+    .grid-contact {
+        grid-template-columns: 1fr 1.5fr; /* Colonne formulaire plus large */
+    }
+}
+
+/* Colonne de gauche : Informations */
+.contact-info {
+    padding-top: 20px;
+}
+
+.contact-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.info-item {
+    margin-bottom: 40px;
+    padding-left: 20px;
+    border-left: 2px solid var(--primary-color); /* Ligne verticale dorée */
+}
+
+.info-item strong {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.info-item p, .info-item a {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* Carte en image */
+.contact-info img {
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+.contact-info img:hover {
+    opacity: 1;
+}
+
+/* Colonne de droite : Formulaire */
+.form-box-contact {
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.form-box-contact h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    text-align: center;
+}

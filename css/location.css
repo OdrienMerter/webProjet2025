@@ -1,0 +1,43 @@
+/* --- Styles Spécifiques à la page Location --- */
+
+/* Mise en valeur du prix par jour */
+.card-price {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.card-price::after {
+    content: ' / jour';
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    text-transform: lowercase;
+}
+
+/* CORRECTION ICI : Les badges (Places, Clim...) */
+.card-details span {
+    /* On enlève le fond blanc */
+    background-color: transparent;
+    
+    /* On ajoute une bordure fine dorée */
+    border: 1px solid var(--primary-color);
+    color: var(--text-color); /* Texte blanc */
+    
+    padding: 6px 12px;
+    border-radius: 4px; /* Coins un peu plus carrés */
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+/* Alignement des détails */
+.card-details {
+    display: flex;
+    gap: 10px; /* Espace entre les badges */
+    flex-wrap: wrap; /* Permet de passer à la ligne si trop nombreux */
+    margin-top: 10px;
+    border: none; /* On retire les lignes grises si elles gênent */
+    padding: 0;
+}

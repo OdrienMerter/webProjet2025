@@ -1,0 +1,73 @@
+/* --- Styles Spécifiques à la page A Propos --- */
+
+/* Section Histoire (Image + Texte) */
+.story-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+/* Si vous utilisez des div simples comme dans votre HTML actuel, 
+   on peut cibler les enfants directs du conteneur flex */
+.story-section > div {
+    flex: 1;
+    min-width: 300px;
+}
+
+.story-section img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+}
+
+.story-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.story-section p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* --- Cartes Valeurs (Nouveau Design) --- */
+
+.value-card {
+    background-color: var(--card-bg); /* Fond gris foncé */
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    height: 100%; /* Pour qu'elles aient la même hauteur */
+    
+    /* Petite ligne dorée décorative en haut */
+    border-top: 3px solid transparent; 
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    border-top-color: var(--primary-color); /* La ligne devient dorée */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.value-card h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color); /* Titre en Or */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.value-card p {
+    color: var(--text-muted); /* Texte gris clair */
+    font-size: 0.95rem;
+    line-height: 1.7;
+}

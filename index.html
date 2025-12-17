@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternal Motor - Excellence Automobile</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="icon" href="/image/logo.png" type="image/png">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="../index.html" class="logo-container">
+          <img src="/image/logo.png" alt="Logo Eternal Motor" class="logo-img">
+          <span class="logo-text">Eternal Motor</span>
+      </a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="/html/achat.html">Achat</a></li>
+                <li><a href="/html/location.html">Location</a></li>
+                <li><a href="/html/vente.html">Vente</a></li>
+                <li><a href="/html/abonnement.html">Abonnement</a></li>
+                <li><a href="/html/A propos.html">À propos</a></li>
+                <li><a href="/html/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- HERO SECTION (Gardée telle quelle) -->
+    <section class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="./image/Video2.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Conduisez l'Excellence</h1>
+            <p>Découvrez notre sélection exclusive de véhicules de prestige. Achat, location ou abonnement, nous redéfinissons votre mobilité.</p>
+            <div class="cta-group">
+                <a href="/html/achat.html" class="btn">Voir le stock</a>
+                <a href="/html/contact.html" class="btn btn-outline">Nous contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1 : DERNIÈRES ARRIVÉES -->
+    <section class="container">
+        <h2 class="section-title">Nos Dernières Arrivées</h2>
+        <div class="grid">
+            
+            <!-- Voiture 1 -->
+            <article class="card">
+                <!-- IMPORTANT : On ajoute ce conteneur relative pour caler la flèche -->
+                <div style="position: relative;">
+                    <div class="card-slider">
+                        <img src="/image/Ferrari Roma.jpg" alt="Ferrari Roma Avant">
+                        <img src="/image/Ferrari Roma ar.jpg" alt="Ferrari Roma Intérieur">
+                        <img src="/image/Ferrari Roma int.jpg" alt="Ferrari Roma Arrière">
+                    </div>
+                    <div class="swipe-hint">
+                        <span>&#10095;</span>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <h3 class="card-title">Ferrari Roma</h3>
+                    <p class="card-price">245 000 €</p>
+                    <div class="card-details">
+                        <span>2023</span>
+                        <span>3 500 km</span>
+                        <span>V8 Biturbo</span>
+                    </div>
+                    <a href="/html/achat.html" class="btn" style="width: 100%">Voir la fiche</a>
+                </div>
+            </article>
+
+            <!-- Voiture 2 -->
+            <article class="card">
+                <div style="position: relative;">
+                    <div class="card-slider">
+                        <img src="/image/Bentley Continental GT.jpg" alt="Bentley Avant">
+                        <img src="/image/Bentley Continental GT ar.jpg" alt="Bentley Profil">
+                        <img src="/image/Bentley Continental GT int.jpg" alt="Bentley Intérieur">
+                    </div>
+                    <div class="swipe-hint">
+                        <span>&#10095;</span>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <h3 class="card-title">Bentley Continental GT</h3>
+                    <p class="card-price">210 000 €</p>
+                    <div class="card-details">
+                        <span>2022</span>
+                        <span>15 000 km</span>
+                        <span>W12</span>
+                    </div>
+                    <a href="/html/achat.html" class="btn" style="width: 100%">Voir la fiche</a>
+                </div>
+            </article>
+
+            <!-- Voiture 3 -->
+            <article class="card">
+                <div style="position: relative;">
+                    <div class="card-slider">
+                        <img src="/image/Lamborghini Urus av.jpg" alt="Lamborghini Urus Avant">
+                        <img src="/image/Lamborghini Urus ar.jpg" alt="Lamborghini Urus Arrière">
+                        <img src="/image/Lamborghini Urus Performante int.jpg" alt="Lamborghini Urus Intérieur">
+                    </div>
+                    <div class="swipe-hint">
+                        <span>&#10095;</span>
+                    </div>
+                </div>
+                
+                <div class="card-content">
+                    <h3 class="card-title">Lamborghini Urus Performante</h3>
+                    <p class="card-price">290 000 €</p>
+                    <div class="card-details">
+                        <span>2024</span>
+                        <span>1 200 km</span>
+                        <span>SUV Sport</span>
+                    </div>
+                    <a href="/html/achat.html" class="btn" style="width: 100%">Voir la fiche</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- SECTION 2 : NOS SERVICES -->
+    <section class="container" style="background: #1a1a1a; margin-top: 50px; width: 100%; max-width: 100%;">
+        <div style="max-width: 1300px; margin: 0 auto;">
+            <h2 class="section-title">Nos Services Exclusifs</h2>
+            
+            <div class="grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="icon-box">🔑</div>
+                    <h3>Conciergerie Privée</h3>
+                    <p>Un assistant personnel dédié à votre mobilité, disponible 24/7 pour gérer l'entretien, l'assurance et vos déplacements.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="icon-box">🚚</div>
+                    <h3>Livraison à Domicile</h3>
+                    <p>Recevez votre nouveau véhicule directement devant votre porte, partout en Europe, livré par camion fermé et sécurisé.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="icon-box">🛡️</div>
+                    <h3>Garantie & Entretien</h3>
+                    <p>Tous nos véhicules bénéficient d'une garantie constructeur étendue et d'un suivi mécanique rigoureux dans nos ateliers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Eternal Motor</h4>
+            <p>Votre partenaire mobilité de prestige.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="achat.html">Acheter</a></li>
+                <li><a href="vente.html">Vendre</a></li>
+                <li><a href="contact.html">Nous contacter</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Agence</h4>
+            <p>41 Boulevard Vauban<br>59000 Lille, France</p>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2025 Eternal Motor. Tous droits réservés.
+    </div>
+</footer>
+
+</body>
+</html>

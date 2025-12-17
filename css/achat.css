@@ -1,0 +1,19 @@
+/* --- Styles Spécifiques à la page Achat --- */
+/* Surcharge de la grille pour l'achat si besoin */
+.grid {
+gap: 40px;
+}
+.card-details {
+display: flex;
+justify-content: space-between;
+padding: 10px 0;
+border-top: 1px solid #eee;
+border-bottom: 1px solid #eee;
+margin-bottom: 20px;
+font-size: 0.85rem;
+color: #666;
+}
+/* Badge spécifique pour les véhicules vendus ou nouveaux (optionnel) */
+.card {
+position: relative;
+}
